@@ -56,7 +56,7 @@ if [ -n "$minikube_status" ]; then
     echo "Minikube is already running."
 else
     echo "Minikube is not running. Starting Minikube..."
-    minikube start
+    minikube start -p local-cluster --nodes 2 --driver=docker
 fi
 
 # Check if kubectl is installed
