@@ -64,6 +64,8 @@ fi
 # list all nodes
 kubectl get nodes
 
+sleep 10
+
 # list all pods
 kubectl get po -A
 EOF
