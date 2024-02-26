@@ -18,6 +18,20 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 # Verify that the installation is successful by running the hello-world image:
 sudo docker run hello-world
 
+# Check if helm is installed
+if ! command -v helm &> /dev/null
+then
+    # Install helm
+    curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+    sudo apt-get install apt-transport-https --yes
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+    sudo apt-get update
+    sudo apt-get install helm
+    echo "Helm has been installed."
+else
+    echo "Helm is already installed."
+fi
+
 # add current user in docker group
 sudo usermod -aG docker $USER && newgrp docker<<'EOF'
 
