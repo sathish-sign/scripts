@@ -1,5 +1,5 @@
-# #!/usr/bin/env bash
-# set -ex
+#!/usr/bin/env bash
+set -ex
 
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -86,4 +86,10 @@ sleep 10
 
 # list all pods
 kubectl get po -A
+
+# Instruction for the user to log out and log back in
+echo "..................................................................."
+echo "Please log out and then log back in for the changes to take effect."
+echo "..................................................................."
+
 EOF
