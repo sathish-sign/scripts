@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-set -ex
+# #!/usr/bin/env bash
+# set -ex
 
 # Add Docker's official GPG key:
 sudo apt-get update
