@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -84,4 +85,5 @@ sleep 10
 
 # list all pods
 kubectl get po -A
+exit
 EOF
